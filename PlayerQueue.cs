@@ -11,6 +11,11 @@ namespace Monopoly
             this.players = new Queue<Player>(players);
         }
 
+        public Player Peek()
+        {
+            return players.Peek();
+        }
+
         public Player GetCurrentPlayer()
         {
             var player = players.Dequeue();

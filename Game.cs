@@ -8,10 +8,13 @@ namespace Monopoly
         PlayerQueue queue;
         Board board;
 
+        private bool IsOver => queue.Peek() == null;
+
         public Game(IEnumerable<Player> players, IEnumerable<ICell> cells)
         {
             this.board = new Board(cells);
             queue = new PlayerQueue(players);
+
             foreach (var item in players)
                 item.Current = board.First;
         }
