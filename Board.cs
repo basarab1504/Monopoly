@@ -4,22 +4,19 @@ namespace Monopoly
 {
     class Board
     {
-        private CircularSinglyLinkedList<ICell> list = new CircularSinglyLinkedList<ICell>();
+        List<ICell> cells = new List<ICell>();
+
+        public ICell First => cells[0];
 
         public Board(IEnumerable<ICell> cells)
         {
-            foreach (var item in cells)
-                list.Add(item);
+            this.cells = new List<ICell>(cells);
         }
 
-        public ICell First => list.First.Value;
-
-        public ICell GetNext(ICell cell, int distance)
+        public ICell GetNext(ICell currentCell, int distance)
         {
-            var node = list.First;
-            while (distance > 0)
-                node = node.Next;
-            return node.Value;
+            int finalIndex = (currentCell.Index + distance) % cells.Count;
+            return cells[finalIndex];
         }
     }
 }

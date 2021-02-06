@@ -2,7 +2,7 @@ namespace Monopoly
 {
     class GoToJailCell : Cell
     {
-        public Cell JailCell { get; set; }
+        public ICell JailCell { get; set; }
 
         public override void PlayerStepped(Player player)
         {

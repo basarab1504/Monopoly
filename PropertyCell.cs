@@ -31,7 +31,7 @@ namespace Monopoly
                 // string answer = System.Console.ReadLine();
                 // if (answer == "y")
                 //     Owner = player;
-                System.Console.WriteLine($"{player.Name} купил {ID}");
+                System.Console.WriteLine($"{player.Name} купил {Label}");
                 Owner = player;
             }
         }
