@@ -27,7 +27,7 @@ namespace Monopoly
 
             Game game = new Game(players, cells);
 
-            game.MakeMove(2);
+            game.MakeMove();
 
             // game.MakeMove(5);
             // System.Console.WriteLine(player.Capital);
