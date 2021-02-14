@@ -8,7 +8,7 @@ namespace Monopoly
         {
             base.Interact(player);
             System.Console.WriteLine($"{player.Name} получил {Amount}");
-            player.Capital -= Amount;
+            player.Capital += Amount;
         }
     }
 }
