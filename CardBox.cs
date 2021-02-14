@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 
 namespace Monopoly
@@ -5,6 +6,7 @@ namespace Monopoly
     class CardBox
     {
         private List<ICard> cards;
+        private Random random = new Random();
 
         public CardBox(IEnumerable<ICard> cards)
         {
@@ -13,7 +15,8 @@ namespace Monopoly
 
         public ICard GetCard()
         {
-            return cards[0];
+            int randomIndex = random.Next(0, cards.Count);
+            return cards[randomIndex];
         }
     }
 }

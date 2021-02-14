@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 
 namespace Monopoly
@@ -7,8 +6,8 @@ namespace Monopoly
     {
         PlayerQueue queue;
         Board board;
-
-        private bool IsOver => queue.Peek() == null;
+        Dies dies = new Dies();
+        public Jail Jail { get; set; }
 
         public Game(IEnumerable<Player> players, IEnumerable<ICell> cells)
         {
@@ -22,46 +21,42 @@ namespace Monopoly
         public void MakeMove()
         {
             var currentPlayer = queue.GetCurrentPlayer();
-            RollAndMove(currentPlayer);
+
+            dies.Roll();
+
+            System.Console.WriteLine($"{currentPlayer.Name} выпало: {dies.First} и {dies.Second}");
+
+            //если выпал дубль
+            //если в тюрьме
+            //выйти и ходить
+            //иначе
+            //ходить еще раз
+            //иначе
+            //если в тюрьме
+            //учесть
+            //иначе
+            //ходить
+
+            if (!currentPlayer.InJail)
+                Move(currentPlayer, dies.First + dies.Second);
+            else if (dies.First == dies.Second)
+                Jail.RemoveFromJail(currentPlayer);
+            else
+                Jail.Update(currentPlayer);
         }
 
-        public void MakeMove(int distance)
+        public void MakeInstantMove(int distance)
         {
             var currentPlayer = queue.GetCurrentPlayer();
             Move(currentPlayer, distance);
         }
 
-        private void RollAndMove(Player player)
+        private void Move(Player currentPlayer, int distance)
         {
-            int firstDice;
-            int secondDice;
-            RollDice(out firstDice, out secondDice);
-            System.Console.WriteLine($"У {player.Name} выпало {firstDice} и {secondDice}");
-
-            Move(player, firstDice + secondDice);
-
-            if (firstDice == secondDice)
-            {
-                System.Console.WriteLine($"Дубль у {player.Name}");
-                RollAndMove(player);
-            }
+            ICell current = currentPlayer.Current;
+            ICell final = board.GetNext(currentPlayer.Current, distance);
+            final.PlayerStepped(currentPlayer);
         }
 
-        private void Move(Player player, int distance)
-        {
-            ICell current = player.Current;
-            ICell final = board.GetNext(player.Current, distance);
-
-            final.PlayerStepped(player);
-        }
-
-
-        private void RollDice(out int first, out int second)
-        {
-            Random rand = new Random();
-
-            first = rand.Next(1, 7);
-            second = rand.Next(1, 7);
-        }
     }
 }

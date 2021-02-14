@@ -13,21 +13,33 @@ namespace Monopoly
 
             CardBox box = new CardBox(cards);
 
+            Jail jail = new Jail();
+            jail.TurnsToStay = 3;
+
             ICell goToCell = new GoCell();
             ICell cell1 = new PropertyCell() { Label = "Первая", Price = 25000, Rent = 5000 };
             ICell cell2 = new CardCell() { Box = box };
             ICell cell3 = new PropertyCell() { Label = "Вторая", Price = 25000, Rent = 5000 };
             ICell jailCell = new NoInteractionCell();
-            ICell goToJailCell = new GoToJailCell() { JailCell = jailCell };
+            ICell goToJailCell = new GoToJailCell() { Jail = jail };
 
-            card.Cell = cell1;
+            card.Cell = cell3;
+            jail.JailCell = jailCell;
 
             var cells = new ICell[] { goToCell, cell1, cell2, cell3, jailCell, goToJailCell };
             var players = new Player[] { new Player() { Name = "red" } };
 
             Game game = new Game(players, cells);
+            game.Jail = jail;
 
-            game.MakeMove();
+            game.MakeInstantMove(2);
+
+            // game.MakeInstantMove(5);
+            // game.MakeMove();
+            // game.MakeMove();
+            // game.MakeMove();
+            // game.MakeMove();
+            // game.MakeMove();
 
             // game.MakeMove(5);
             // System.Console.WriteLine(player.Capital);

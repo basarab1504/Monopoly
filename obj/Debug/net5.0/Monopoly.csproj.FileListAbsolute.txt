@@ -1,0 +1,16 @@
+C:\Users\joker\OneDrive\Документы\Проекты\C#\Monopoly\bin\Debug\net5.0\Monopoly.exe
+C:\Users\joker\OneDrive\Документы\Проекты\C#\Monopoly\bin\Debug\net5.0\Monopoly.deps.json
+C:\Users\joker\OneDrive\Документы\Проекты\C#\Monopoly\bin\Debug\net5.0\Monopoly.runtimeconfig.json
+C:\Users\joker\OneDrive\Документы\Проекты\C#\Monopoly\bin\Debug\net5.0\Monopoly.runtimeconfig.dev.json
+C:\Users\joker\OneDrive\Документы\Проекты\C#\Monopoly\bin\Debug\net5.0\Monopoly.dll
+C:\Users\joker\OneDrive\Документы\Проекты\C#\Monopoly\bin\Debug\net5.0\ref\Monopoly.dll
+C:\Users\joker\OneDrive\Документы\Проекты\C#\Monopoly\bin\Debug\net5.0\Monopoly.pdb
+C:\Users\joker\OneDrive\Документы\Проекты\C#\Monopoly\obj\Debug\net5.0\Monopoly.csprojAssemblyReference.cache
+C:\Users\joker\OneDrive\Документы\Проекты\C#\Monopoly\obj\Debug\net5.0\Monopoly.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\joker\OneDrive\Документы\Проекты\C#\Monopoly\obj\Debug\net5.0\Monopoly.AssemblyInfoInputs.cache
+C:\Users\joker\OneDrive\Документы\Проекты\C#\Monopoly\obj\Debug\net5.0\Monopoly.AssemblyInfo.cs
+C:\Users\joker\OneDrive\Документы\Проекты\C#\Monopoly\obj\Debug\net5.0\Monopoly.csproj.CoreCompileInputs.cache
+C:\Users\joker\OneDrive\Документы\Проекты\C#\Monopoly\obj\Debug\net5.0\Monopoly.dll
+C:\Users\joker\OneDrive\Документы\Проекты\C#\Monopoly\obj\Debug\net5.0\ref\Monopoly.dll
+C:\Users\joker\OneDrive\Документы\Проекты\C#\Monopoly\obj\Debug\net5.0\Monopoly.pdb
+C:\Users\joker\OneDrive\Документы\Проекты\C#\Monopoly\obj\Debug\net5.0\Monopoly.genruntimeconfig.cache
